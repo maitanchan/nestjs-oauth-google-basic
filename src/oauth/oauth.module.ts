@@ -7,19 +7,25 @@ import { GoogleStrategy } from "./strategy/google.strategy";
 @Module({
 
     imports: [
+
         ConfigModule.forRoot({
+
             isGlobal: true,
+
             envFilePath: '.env'
+
         })
+
     ],
 
-    controllers: [
-        OauthController
-    ],
+    controllers: [OauthController],
 
     providers: [
+
         OauthService,
+
         GoogleStrategy
+
     ]
 
 })

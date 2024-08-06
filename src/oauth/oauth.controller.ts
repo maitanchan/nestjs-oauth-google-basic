@@ -9,7 +9,7 @@ export class OauthController {
 
     @Get()
     @UseGuards(OauthGuard)
-    googleAuth(@Req() req) {
+    googleAuth(@Req() req: any) {
 
         return this.oauthService.googleAuth()
 
@@ -17,7 +17,7 @@ export class OauthController {
 
     @Get('auth/google/callback')
     @UseGuards(OauthGuard)
-    googleAuthRedirect(@Req() req) {
+    googleAuthRedirect(@Req() req: any) {
 
         return this.oauthService.googleAuthRedirect(req)
 

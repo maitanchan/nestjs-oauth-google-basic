@@ -7,8 +7,11 @@ import { OauthModule } from './oauth/oauth.module';
   imports: [
 
     ConfigModule.forRoot({
+
       isGlobal: true,
+
       envFilePath: '.env'
+
     }),
 
     OauthModule

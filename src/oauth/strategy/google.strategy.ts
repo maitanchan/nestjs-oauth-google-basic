@@ -6,15 +6,13 @@ import { Strategy, VerifyCallback } from 'passport-google-oauth20'
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
 
-    constructor(private readonly configService: ConfigService) {
+    constructor(configService: ConfigService) {
 
         super({
-
             clientID: configService.get('CLIENT_ID'),
             clientSecret: configService.get('CLIENT_SECRET'),
             callbackURL: configService.get('CALL_BACK_URL'),
             scope: ['email', 'profile'],
-
         })
 
     }
